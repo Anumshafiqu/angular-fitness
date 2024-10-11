@@ -1,0 +1,56 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-3">
+          <li class="nav-item">
+            <a class="nav-link active fw-medium small text-secondary"  
+            [routerLink]="['/new-exercise']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">New Exercises</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fw-medium small text-secondary"  
+              [routerLink]="['/past-exercise']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">Past Exercises</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="bg-white shadow-1">
+<div class="input-container d-flex align-items-center justify-content-center">
+    <input pInputText type="text" [(ngModel)]="searchValue" (input)="filter()" placeholder="Filter" class="
+    border-bottom border-0 fw-medium my-4 card-1 flex align-items-center justify-content-center" />
+</div>
+  
+    <p-table [value]="filteredExercises" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[1,2,3,4,5,6,7,8,9,10]">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Date</th>
+          <th>Name</th>
+          <th>Duration (min)</th>
+          <th>Calories</th>
+          <th>State</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-exercise>
+        <tr class="small text-secondary">
+          <td class="small text-secondary">{{ exercise.date }}</td>
+          <td class="small text-secondary">{{ exercise.name }}</td>
+          <td class="small text-secondary">{{ exercise.duration }}</td>
+          <td class="small text-secondary">{{ exercise.calories }}</td>
+          <td class="small text-secondary">{{ exercise.state }}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="5">No exercises found.</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  

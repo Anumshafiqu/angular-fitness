@@ -1,0 +1,29 @@
+:host ::ng-deep {
+    .p-progressbar {
+        height: .5rem;
+        background-color: #D8DADC;
+    
+        .p-progressbar-value {
+            background-color: #607D8B;
+        }
+    }
+}
+.card {
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 1rem;
+  }
+
+  td{
+    font-size: 13px;
+  }
+  .input-container {
+    margin-bottom: 1rem; /* Add space below the input */
+    
+    /* margin-left: 500px; */
+}
+
+.input-container input {
+align-items: center;
+}

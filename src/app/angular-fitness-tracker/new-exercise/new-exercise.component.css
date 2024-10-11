@@ -1,0 +1,8 @@
+::ng-deep .custom-dropdown .p-dropdown {
+    width: 200px; 
+    padding: 0px;
+}
+
+  .button{
+    margin-left: 170px;
+  }

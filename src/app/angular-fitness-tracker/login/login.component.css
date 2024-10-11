@@ -1,0 +1,77 @@
+.error {
+    border: 2px solid red;
+  }
+  
+  small {
+    color: red;
+  }
+  
+  button {
+    /* background-color: #ccc; */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #0E46A3;
+  }
+  
+  button:disabled {
+    /* background-color: #e0e0e0; */
+    cursor: not-allowed;
+  }
+/* .card-1{
+    margin-left: 100px;
+}
+.card-2{
+    margin-left: 200px;
+} */
+.fa-spinner {
+    margin-left: 5px;
+  }
+
+  .progress-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+    height: 20vh;
+  }
+  
+  .circular-loader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .circular {
+    animation: rotate 2s linear infinite;
+  }
+  
+  .path {
+    stroke: #4285f4;
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -35px;
+    }
+    100% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -124px;
+    }
+  }
+  
+  

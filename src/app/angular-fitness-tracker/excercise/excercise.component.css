@@ -1,0 +1,15 @@
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .loading-text h3 {
+    margin: 15px 0;
+  }
+  
+  .loading-text p {
+    margin: 10px 0;
+  }
