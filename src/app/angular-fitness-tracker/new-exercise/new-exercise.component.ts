@@ -15,6 +15,11 @@ interface City {
 })
 export class NewExerciseComponent {
    cities: City[] | undefined;
+   selectedCategory: string | null = null;
+   selectCategory(category: string) {
+    this.selectedCategory = category; // Store the selected category
+    this.myForm.controls['category'].setValue(category); // Set the form control value
+  }
 
   // selectedCity: City | undefined;
 

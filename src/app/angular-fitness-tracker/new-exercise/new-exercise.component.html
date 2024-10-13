@@ -20,75 +20,66 @@
     </div>
   </div>
 </nav> -->
-  
+
 <div class="note-1">
-<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-3">
-        <li class="nav-item">
-          <a class="nav-link active fw-medium small text-secondary"  
-          [routerLink]="['/new-exercise']"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}">New Exercises</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active fw-medium small text-secondary"  
-            [routerLink]="['/past-exercise']"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}">Past Exercises</a>
-        </li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-3">
+          <li class="nav-item">
+            <a class="nav-link active fw-medium small text-secondary" [routerLink]="['/new-exercise']"
+              routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">New Exercises</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fw-medium small text-secondary" [routerLink]="['/past-exercise']"
+              routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Past Exercises</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row justify-content-center mt-4">
+      <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12">
+        <div class="card shadow-1 justify-content-center border-0 py-4">
+          <h5 class="fw-normal text-center fw-medium">Time to start workout</h5>
+          <!-- dropdown.component.html -->
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="mt-2 w-12rem">
+            <div class="mb-3">
+              <div class="dropdown">
+                <button class="btn btn-light w-12rem p-2 text-secondary" type="button" id="dropdownMenuButton"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  {{ selectedCategory || 'Select type of training' }}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li *ngFor="let category of categories">
+                    <a class="dropdown-item" (click)="selectCategory(category)"
+                      style="padding: 0.5rem 1rem; width: 180px; border: 0;"> <!-- Custom padding for dropdown items -->
+                      {{ category }}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div *ngIf="submitted && formControls['category'].errors" class="invalid-feedback">
+                Category is required.
+              </div>
+            </div>
+          </form>
+
+
+
+
+
+
+
+
+          <div class="d-flex justify-content-center align-items-center">
+            <button
+              class="btn btn-light btn-sm w-5rem mt-5 fw-medium px-0 flex justify-content-center align-items-center"
+              (click)="startTraining()">Start</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</nav>
-
-<div class="container">
-<div class="row justify-content-center mt-4">
-<div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12">
-  <div class="card shadow-1 justify-content-center border-0 py-4">
-    <h5 class="fw-normal text-center fw-medium">Time to start workout</h5>
-    <!-- <div class=" flex mt-4 justify-content-center">
-      <p-floatLabel>
-          <p-dropdown 
-              [options]="cities"
-              [(ngModel)]="selectedCity"
-              optionLabel="name"
-              inputId="float-label"   class="custom-dropdown p-0"/>
-          <label for="float-label" class="small">Select type of traning</label>
-      </p-floatLabel>
-  </div> -->
-
-
-<!-- new-exercise.component.html -->
-<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="mt-2 w-12rem">
-  <div class="mb-3">
-    <select id="category" formControlName="category" class="
- form-select py-2 small text-secondary fw-normal fs-6 py-6" 
-            [ngClass]="{'is-invalid': submitted && formControls['category'].errors}" >
-      <option *ngFor="let category of categories" [value]="category" class="
-      fw-medium h-10rem">{{ category }}</option>
-      <option value="" class=" fw-medium
-      "> Select type of traning</option>
-
-    </select>
-    <div *ngIf="submitted && formControls['category'].errors" class="invalid-feedback">
-      Category is required.
-    </div>
-  </div>
-
-</form>
-
-
-
-
-
-
-  
-    <div class="d-flex justify-content-center align-items-center">
-    <button class="btn btn-light btn-sm w-5rem mt-5 fw-medium px-0 flex justify-content-center align-items-center" (click)="startTraining()">Start</button>
-  </div>
-</div>
-</div>
-</div>
-</div>
