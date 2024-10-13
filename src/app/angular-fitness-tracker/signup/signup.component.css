@@ -11,7 +11,7 @@
     border: none;
     padding: 10px;
     cursor: pointer;
-    background-color: #0E46A3;
+    /* background-color: #0E46A3; */
   }
   
   button:disabled {
@@ -90,5 +90,12 @@ button:disabled {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -124px;
   }
+}
+.note-1{
+  background-color: #F5F7F8;
+  height: 90vh;
+}
+.note-2{
+  background-color: #F5F7F8;
 }
   

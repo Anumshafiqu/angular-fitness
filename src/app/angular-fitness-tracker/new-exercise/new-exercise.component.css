@@ -1,8 +1,73 @@
 ::ng-deep .custom-dropdown .p-dropdown {
     width: 200px; 
     padding: 0px;
+    padding-left: 0px;
 }
 
   .button{
     margin-left: 170px;
   }
+  .note-1{
+    background-color: #F5F7F8;
+    height: 90vh;
+  }
+  
+  /* app.component.css */
+.is-invalid {
+    border-color: #dc3545;
+  }
+  
+  .invalid-feedback {
+    color: #dc3545;
+    font-size: 0.875em;
+  }
+
+  form{
+    margin-left: 130px;
+  }
+  option{
+    padding: 10px !important;
+  }
+/* dropdown.component.css */
+.custom-dropdown {
+    padding: 0.75rem 1.25rem !important; /* Increase vertical and horizontal padding */
+    font-size: 1rem; /* Set font size */
+    height: auto; /* Allow height to adjust with padding */
+    border: 1px solid #ced4da; /* Add border */
+    border-radius: 0.25rem; /* Optional: Round corners */
+  }
+  
+  /* Focus styles */
+  .custom-dropdown:focus {
+    border-color: #80bdff; /* Change border color on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Optional: Focus shadow */
+  }
+  
+  /* Ensure invalid feedback displays correctly */
+  .invalid-feedback {
+    display: block; /* Show feedback block */
+    font-size: 0.875em; /* Font size for error message */
+    color: #dc3545; /* Bootstrap danger color */
+  }
+  
+  /* Specificity for form-select */
+  .form-select.custom-dropdown {
+    padding: 0.75rem 1.25rem !important; /* Ensure padding is applied */
+    font-size: 1rem;
+  }
+
+  .form-select {
+    padding: 10px; /* Reset default padding */
+  }
+  
+  
+  
+  
+  
+
+  
+
+
+
+
+  

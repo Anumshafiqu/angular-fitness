@@ -31,6 +31,11 @@ import { MultiSelectModule } from 'primeng/multiselect';
 
 import { InputTextModule } from 'primeng/inputtext'; // <-- For search input
 import { ButtonModule } from 'primeng/button'; // <-- For button
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { DialogModule } from 'primeng/dialog';
+
 
 
 
@@ -69,7 +74,11 @@ import { ButtonModule } from 'primeng/button'; // <-- For button
     SliderModule,
     MultiSelectModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    ConfirmDialogModule,
+    ToastModule,
+    ConfirmPopupModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

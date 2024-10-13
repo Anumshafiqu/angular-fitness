@@ -20,8 +20,8 @@
     </div>
   </div>
 </nav> -->
-
-
+  
+<div class="note-1">
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -47,17 +47,44 @@
 <div class="row justify-content-center mt-4">
 <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12">
   <div class="card shadow-1 justify-content-center border-0 py-4">
-      <h5 class="fw-normal text-center fw-medium">Time to start workout</h5>
-      <div class=" flex mt-4 justify-content-center">
-        <p-floatLabel>
-            <p-dropdown 
-                [options]="cities"
-                [(ngModel)]="selectedCity"
-                optionLabel="name"
-                inputId="float-label"   class="custom-dropdown p-0"/>
-            <label for="float-label" class="small">Select type of traning</label>
-        </p-floatLabel>
+    <h5 class="fw-normal text-center fw-medium">Time to start workout</h5>
+    <!-- <div class=" flex mt-4 justify-content-center">
+      <p-floatLabel>
+          <p-dropdown 
+              [options]="cities"
+              [(ngModel)]="selectedCity"
+              optionLabel="name"
+              inputId="float-label"   class="custom-dropdown p-0"/>
+          <label for="float-label" class="small">Select type of traning</label>
+      </p-floatLabel>
+  </div> -->
+
+
+<!-- new-exercise.component.html -->
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="mt-2 w-12rem">
+  <div class="mb-3">
+    <select id="category" formControlName="category" class="
+ form-select py-2 small text-secondary fw-normal fs-6 py-6" 
+            [ngClass]="{'is-invalid': submitted && formControls['category'].errors}" >
+      <option *ngFor="let category of categories" [value]="category" class="
+      fw-medium h-10rem">{{ category }}</option>
+      <option value="" class=" fw-medium
+      "> Select type of traning</option>
+
+    </select>
+    <div *ngIf="submitted && formControls['category'].errors" class="invalid-feedback">
+      Category is required.
     </div>
+  </div>
+
+</form>
+
+
+
+
+
+
+  
     <div class="d-flex justify-content-center align-items-center">
     <button class="btn btn-light btn-sm w-5rem mt-5 fw-medium px-0 flex justify-content-center align-items-center" (click)="startTraining()">Start</button>
   </div>

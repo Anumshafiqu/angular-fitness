@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ConfirmationService } from 'primeng/api';
 
 interface City {
   name: string;
@@ -12,9 +14,9 @@ interface City {
   styleUrl: './new-exercise.component.css'
 })
 export class NewExerciseComponent {
-  cities: City[] | undefined;
+   cities: City[] | undefined;
 
-  selectedCity: City | undefined;
+  // selectedCity: City | undefined;
 
   ngOnInit() {
     this.cities = [
@@ -25,10 +27,43 @@ export class NewExerciseComponent {
       { name: 'Plank', code: 'PRS' }
   ];
   }
-  constructor(private router: Router) {}
+
+
+  selectedCity: any;
+    constructor(private router: Router,private formBuilder: FormBuilder) {
+
+      this.myForm = this.formBuilder.group({
+        category: ['', Validators.required]
+      });
+    }
 
   startTraining() {
     // Navigate to the loading page
     this.router.navigate(['/excercise']); 
   }
+
+
+  myForm: FormGroup;
+  submitted = false;
+  categories = ['Touch toes', 'Push ups', 'Crunches', 'side Lunges', 'Plank'];
+
+
+
+  // Getter for easy access to form controls
+  get formControls() {
+    return this.myForm.controls;
+  }
+
+  // Form submission
+  onSubmit() {
+    this.submitted = true;
+
+    if (this.myForm.invalid) {
+      return;  // Don't proceed if form is invalid
+    }
+
+    // If valid, handle the form data
+    console.log("Form Submitted Successfully", this.myForm.value);
+  }
+
 }

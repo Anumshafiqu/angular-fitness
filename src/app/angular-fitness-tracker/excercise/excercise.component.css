@@ -13,3 +13,10 @@
   .loading-text p {
     margin: 10px 0;
   }
+  .modal-content {
+    background-color: #f8f9fa;
+  }
+  
+  .modal-footer .btn {
+    min-width: 50px;
+  }

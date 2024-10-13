@@ -6,8 +6,42 @@
     <div class="loading-text">
       <h3>{{ progressPercentage }}%</h3>
       <p class="small fw-medium">Keep Going, you are doing great job!</p>
-      <button class="btn bg-pink-500 text-white" (click)="stopLoading()">Stop</button>
+      <!-- <button class="btn bg-pink-500 text-white" (click)="stopLoading()">Stop</button> -->
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#stopModal">
+        Stop
+      </button>
     </div>
   </div>
 </div>
 </div>
+
+<!-- Stop Button -->
+
+
+<!-- Popup Modal -->
+<div class="modal fade" id="stopModal" tabindex="-1" aria-labelledby="stopModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+       <!-- <div class="modal-header"> 
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      <!-- </div> -->
+      <div class="modal-body fs-5 text-center">
+        Are you sure
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary" (click)="onConfirmStop()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
