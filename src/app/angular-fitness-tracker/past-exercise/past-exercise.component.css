@@ -15,9 +15,7 @@
     margin: 1rem;
   }
 
-  td{
-    font-size: 13px;
-  }
+
   .input-container {
     margin-bottom: 1rem; /* Add space below the input */
     
@@ -30,4 +28,7 @@ align-items: center;
 .note-1{
     background-color: #F5F7F8;
     height: 90vh;
+  }
+  tr{
+    border-bottom:  1px solid lavender;
   }

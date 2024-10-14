@@ -21,38 +21,74 @@
     </div>
   </nav>
 
-<div class="bg-white shadow-1">
-<div class="input-container d-flex align-items-center justify-content-center">
-    <input pInputText type="text" [(ngModel)]="searchValue" (input)="filter()" placeholder="Filter" class="
-    border-bottom border-0 fw-medium my-4 card-1 flex align-items-center justify-content-center" />
-</div>
+  <div class="container-fluid mt-4 shadow-1 bg-white">
+    <table class="table">
+        <tr class="p-2">
+          <th  class="p-2">Date</th>
+          <th>Name</th>
+          <th>Duration (min)</th>
+          <th>Calories</th>
+          <th>Status</th>
+        </tr>
+      
+      <tbody class="fw-medium">
+        <tr *ngFor="let exercise of pastExercises">
+          <td>{{ exercise.date }}</td>
+          <td>{{ exercise.name }}</td>
+          <td>{{ exercise.duration }}</td>
+          <td>{{ exercise.calories }}</td>
+          <td>{{ exercise.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   
-    <p-table [value]="filteredExercises" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[1,2,3,4,5,6,7,8,9,10]">
-      <ng-template pTemplate="header">
+  
+  
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- src/app/past-exercise/past-exercise.component.html -->
+<!-- <div class="container mt-4">
+    <h2>Exercise History</h2>
+    <table class="table table-bordered">
+      <thead>
         <tr>
           <th>Date</th>
           <th>Name</th>
           <th>Duration (min)</th>
           <th>Calories</th>
-          <th>State</th>
+          <th>Status</th>
         </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-exercise>
-        <tr class="small text-secondary">
-          <td class="small text-secondary">{{ exercise.date }}</td>
-          <td class="small text-secondary">{{ exercise.name }}</td>
-          <td class="small text-secondary">{{ exercise.duration }}</td>
-          <td class="small text-secondary">{{ exercise.calories }}</td>
-          <td class="small text-secondary">{{ exercise.state }}</td>
+      </thead>
+      <tbody>
+        <tr *ngFor="let exercise of pastExercises">
+          <td>{{ exercise.date }}</td>
+          <td>{{ exercise.name }}</td>
+          <td>{{ exercise.duration }}</td>
+          <td>{{ exercise.calories }}</td>
+          <td>{{ exercise.status }}</td>
         </tr>
-      </ng-template>
-      <ng-template pTemplate="emptymessage">
-        <tr>
-          <td colspan="5">No exercises found.</td>
-        </tr>
-      </ng-template>
-    </p-table>
-  </div>
-
-</div>
+      </tbody>
+    </table>
+  </div> -->
+  
   

@@ -40,6 +40,7 @@ import { DialogModule } from 'primeng/dialog';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { DialogModule } from 'primeng/dialog';
     AboutComponent,
     NewExerciseComponent,
     ExcerciseComponent,
-    PastExerciseComponent
+    PastExerciseComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -17,6 +17,8 @@ const routes: Routes = [
 
   {path : 'excercise' , component : ExcerciseComponent},
   {path : 'past-exercise' , component : PastExerciseComponent},
+  { path: '', redirectTo: '/new-exercises', pathMatch: 'full' },
+  { path: '**', redirectTo: '/new-exercises' }
   
 ];
 

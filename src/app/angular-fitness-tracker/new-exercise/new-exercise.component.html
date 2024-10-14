@@ -1,26 +1,3 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-blue-600 text-white">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-medium p-2 fs-5" routerLink="home">Fitnees Tracker</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto mx-3">
-        <li class="nav-item">
-          <a class="nav-link active fw-medium fs-5" routerLink="signup">Training</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active fw-medium fs-5" routerLink="login">Logout</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active fw-medium fs-5" routerLink="about">About</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
-
 <div class="note-1">
   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container-fluid">
@@ -38,14 +15,14 @@
       </div>
     </div>
   </nav>
-
+  <!-- src/app/new-exercise/new-exercise.component.html -->
   <div class="container">
     <div class="row justify-content-center mt-4">
       <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12">
         <div class="card shadow-1 justify-content-center border-0 py-4">
           <h5 class="fw-normal text-center fw-medium">Time to start workout</h5>
-          <!-- dropdown.component.html -->
-          <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="mt-2 w-12rem">
+
+          <form [formGroup]="myForm" (ngSubmit)="startTraining()" class="mt-2 w-12rem">
             <div class="mb-3">
               <div class="dropdown">
                 <button class="btn btn-light w-12rem p-2 text-secondary" type="button" id="dropdownMenuButton"
@@ -55,30 +32,23 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <li *ngFor="let category of categories">
                     <a class="dropdown-item" (click)="selectCategory(category)"
-                      style="padding: 0.5rem 1rem; width: 180px; border: 0;"> <!-- Custom padding for dropdown items -->
+                      style="padding: 0.5rem 1rem; width: 180px; border: 0;">
                       {{ category }}
                     </a>
                   </li>
                 </ul>
               </div>
-              <div *ngIf="submitted && formControls['category'].errors" class="invalid-feedback">
+              <div *ngIf="submitted && !selectedCategory" class="invalid-feedback">
                 Category is required.
               </div>
             </div>
+
+            <div class="d-flex justify-content-center align-items-center">
+              <button
+                class="btn btn-light btn-sm w-5rem mt-5 fw-medium px-0 flex justify-content-center align-items-center"
+                [disabled]="myForm.valid" type="submit" (click)="startTraining()">Start</button>
+            </div>
           </form>
-
-
-
-
-
-
-
-
-          <div class="d-flex justify-content-center align-items-center">
-            <button
-              class="btn btn-light btn-sm w-5rem mt-5 fw-medium px-0 flex justify-content-center align-items-center"
-              (click)="startTraining()">Start</button>
-          </div>
         </div>
       </div>
     </div>
