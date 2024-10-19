@@ -1,0 +1,28 @@
+.card-custom{
+    background-color: rgb(107, 107, 19);
+    border: 2px solid gold;
+    height: 300px;
+    width: 300px;
+    padding: 10px;
+    color: white;
+    box-shadow: inset 0px 0px 5px 5px yellow;
+}
+.card-1{
+    float: right;
+    cursor: pointer;
+}
+
+.spin {
+    animation: spin-animation 0.4s ease-in-out; /* 0.4s is the duration of the spin */
+  }
+  
+  /* Defines the keyframes for the rotation animation */
+  @keyframes spin-animation {
+    0% {
+      transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    100% {
+      transform: rotate(360deg); /* End at 360 degrees, a full circle */
+    }
+  }
+  

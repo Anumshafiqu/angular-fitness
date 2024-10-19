@@ -35,6 +35,11 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DialogModule } from 'primeng/dialog';
+import { CustomDirComponent } from './angular-custom/custom-dir/custom-dir.component';
+import { CustomDirectiveDirective } from './appDirective/custom-directive.directive';
+import { ScrolltotopDirective } from './appDirective/scrolltotop.directive';
+import { SpinDirective } from './appDirective/spin.directive';
+import { StopPropagationDirective } from './appDirective/stop-propagation.directive';
 
 
 
@@ -51,6 +56,11 @@ import { DialogModule } from 'primeng/dialog';
     NewExerciseComponent,
     ExcerciseComponent,
     PastExerciseComponent,
+    CustomDirComponent,
+    CustomDirectiveDirective,
+    ScrolltotopDirective,
+    SpinDirective,
+    StopPropagationDirective,
 
   ],
   imports: [
